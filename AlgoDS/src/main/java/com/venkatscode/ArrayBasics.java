@@ -8,10 +8,39 @@ public class ArrayBasics {
 
     public static void main(String[] args) {
 
-        //ArrayList<Integer> result = mergeTwoIntArrays(new ArrayList<Integer>(List.of(-1,3)),new ArrayList<Integer>(List.of(-1,-1,0,0,1,2)));
+        ArrayList<Integer> result = mergeTwoIntArraysUpdated(new ArrayList<Integer>(List.of(-1,3)),new ArrayList<Integer>(List.of(-1,-1,0,0,1,2)));
         //removeEven(new int[]{1, 2, 3, 4});
     }
 
+    private static ArrayList<Integer> mergeTwoIntArraysUpdated(ArrayList<Integer> a, ArrayList<Integer> b) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int p1 = 0;
+        int p2 = 0;
+
+
+        while(p1<a.size() && p2<b.size()){
+            if(a.get(p1)<b.get(p2)){
+                result.add(a.get(p1));
+                p1++;
+            }else{
+                result.add(b.get(p2));
+                p2++;
+            }
+        }
+        while(p1<a.size()){
+
+                result.add(a.get(p1));
+                p1++;
+
+        }
+        while( p2<b.size()){
+
+                result.add(b.get(p2));
+                p2++;
+        }
+
+        return result;
+    }
     private static ArrayList<Integer> mergeTwoIntArrays(ArrayList<Integer> a, ArrayList<Integer> b) {
         ArrayList<Integer> result = new ArrayList<>(a.size()+b.size());
         int p1 = 0;
