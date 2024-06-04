@@ -1,44 +1,57 @@
 package com.venkatscode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayBasics {
 
     public static void main(String[] args) {
 
-        mergeTwoIntArrays(new int[]{1,3,5,7},new int[]{2,4,6,8});
+        //ArrayList<Integer> result = mergeTwoIntArrays(new ArrayList<Integer>(List.of(-1,3)),new ArrayList<Integer>(List.of(-1,-1,0,0,1,2)));
         //removeEven(new int[]{1, 2, 3, 4});
     }
 
-    private static void mergeTwoIntArrays(int[] a, int[] b) {
-        int al = a.length;
-        int bl= b.length;
-        int[] c = new int[al+bl];
-        int k =0;
-        int l = 0;
-        for(int i=0;i<a.length;i++){
-            c[i] = a[i];
-        }
-        for(int i =0;i<b.length;i++){
-            c[a.length+i]= b[i];
-        }
-        int temp;
-        int min = c[0];
-        for(int i=0;i<c.length;i++){
-                if(c[i]<min){
-                    temp = c[i];
-                    c[i] = min;
-                    min = temp;
+    private static ArrayList<Integer> mergeTwoIntArrays(ArrayList<Integer> a, ArrayList<Integer> b) {
+        ArrayList<Integer> result = new ArrayList<>(a.size()+b.size());
+        int p1 = 0;
+        int p2 = 0;
+        Integer v1=0,v2=0;
+        boolean aArrayFull = false;
+        boolean bArrayFull = false;
+        for(int p3=0;p3<(a.size()+b.size());p3++){
+            if(p1<a.size()){
+                 v1 = a.get(p1);
 
-                }
+            }else{
+               aArrayFull = true;
+            }
+            if(p2<b.size()){
+                v2 = b.get(p2);
+
+            }else {
+                bArrayFull = true;
+            }
+
+            if(v1<v2 && !aArrayFull){
+                result.add(v1);
+                p1++;
+            }else if(aArrayFull){
+                result.add(v2);
+                p2++;
+            }else if(bArrayFull){
+                result.add(v1);
+                p1++;
+            }else{
+                result.add(v2);
+                p2++;
+            }
         }
-        System.out.println("Before Merge A is ");
-        Arrays.stream(a).forEach(System.out::println);
-        System.out.println("Before Merge B is ");
-        Arrays.stream(b).forEach(System.out::println);
-        System.out.println("After Merge C is ");
-        Arrays.stream(c).forEach(System.out::println);
+        return result;
     }
+
+
+
 
 
     private static int[] removeEven(int[] ints) {
