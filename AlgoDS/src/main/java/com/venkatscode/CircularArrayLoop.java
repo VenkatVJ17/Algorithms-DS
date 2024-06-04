@@ -1,4 +1,4 @@
-package com.venkatcodes;
+package com.venkatscode;
 
 import java.util.Arrays;
 
