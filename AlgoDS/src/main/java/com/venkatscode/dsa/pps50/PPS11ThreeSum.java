@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PPS9ThreeSum {
+public class PPS11ThreeSum {
     public static void main(String[] args) {
         List<List<Integer>> resultList = threeSum(new int[]{-1,0,1,2,-1,-4});
         System.out.println(resultList.toString());

@@ -3,7 +3,7 @@ package com.venkatscode.dsa.pps50;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PPS_2_ValidAnagram {
+public class PPS2ValidAnagram {
 
     public static void main(String[] args) {
         System.out.println(validAnagram("anagram","nagaram"));

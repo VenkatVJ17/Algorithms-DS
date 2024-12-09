@@ -1,6 +1,6 @@
 package com.venkatscode.dsa.pps50;
 
-public class PPS7IsValidPalindrome{
+public class PPS9IsValidPalindrome {
     public static void main(String[] args) {
         boolean result = isPalindromeUpdated("A man, a plan, a canal: Panama");
         System.out.println(result);

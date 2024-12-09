@@ -2,7 +2,7 @@ package com.venkatscode.dsa.pps50;
 
 import java.util.HashSet;
 
-public class PPS_1_ContainsDuplicates {
+public class PPS1ContainsDuplicates {
 
     public static void main(String[] args) {
         int[] intarr = {1,3,4,4,5,5,6};

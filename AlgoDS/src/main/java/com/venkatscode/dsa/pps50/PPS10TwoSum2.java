@@ -4,7 +4,7 @@ package com.venkatscode.dsa.pps50;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class PPS8TwoSum2 {
+public class PPS10TwoSum2 {
     public static void main(String[] args) {
         int[] result = twoSum(new int[]{2,7,11,15},9);
         Arrays.toString(result);
